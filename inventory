@@ -1,0 +1,5 @@
+[all_servers:vars]
+ansible_ssh_private_key_file = /home/otten/Documents/.ssh/id_rsa.pub
+
+[test-ansible]
+ec2-13-250-111-186.ap-southeast-1.compute.amazonaws.com
