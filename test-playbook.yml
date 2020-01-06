@@ -26,11 +26,16 @@
         groups: admin
         append: yes
     
-    - name: add ssh key to .ssh
-      lineinfile:
-        path: '/home/"{{new_user}}"/.ssh/authorized_keys'
-        line: "{{ssh_pubkey}}"
-        mode: 0600
+    - name: create authorized_keys file and add ssh key
+      copy: 
+        content: "{{ssh_pubkey}}"
+        dest: '/home/"{{new_user}}"/.ssh/authorized_keys'
+    
+    # - name: add ssh key to .ssh
+    #   lineinfile:
+    #     path: '/home/"{{new_user}}"/.ssh/authorized_keys'
+    #     line: "{{ssh_pubkey}}"
+    #     mode: 0600
     
     - name: install nginx
       apt: 
