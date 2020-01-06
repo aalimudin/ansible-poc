@@ -3,8 +3,8 @@
   hosts: test-ansible
   remote_user: ubuntu
   become: yes
-  vars: 
-    ssh_pubkey: "{{lookup('file', 'id_rsa.pub')}}"
+  # vars: 
+  #   ssh_pubkey: "{{lookup('file', '~/.ssh/id_rsa.pub')}}"
    
   tasks:
     - name: test connection
@@ -18,11 +18,11 @@
         groups: admin
         append: yes
     
-    - name: add ssh key to .ssh
-      lineinfile:
-        path: '/home/ubuntu/.ssh/authorized_keys'
-        line: "{{ssh_pubkey}}"
-        mode: 0600
+    # - name: add ssh key to .ssh
+    #   lineinfile:
+    #     path: '/home/ubuntu/.ssh/authorized_keys'
+    #     line: "{{ssh_pubkey}}"
+    #     mode: 0600
     
     - name: install nginx
       apt: 
