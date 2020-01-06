@@ -10,8 +10,7 @@
     - name: install python
       apt: 
         name: python
-        state: latest
-        force_apt_get: yes
+        state: present
         update_cache: yes
         install_recommends: yes
     
