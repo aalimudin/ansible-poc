@@ -5,7 +5,7 @@
   become: yes
   vars: 
     ssh_pubkey: "{{lookup('file', '/var/jenkins_home/aws-key/deploy.pub')}}"
-    new-user: test-ansible
+    new_user: test-ansible
    
   tasks:
     - name: test connection
