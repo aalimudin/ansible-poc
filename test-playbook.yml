@@ -7,6 +7,14 @@
   #   ssh_pubkey: "{{lookup('file', '~/.ssh/id_rsa.pub')}}"
    
   tasks:
+    - name: install python
+      apt: 
+        name: python
+        state: latest
+        force_apt_get: yes
+        update_cache: yes
+        install_recommends: yes
+    
     - name: test connection
       ping:
       remote_user: ubuntu
@@ -28,14 +36,6 @@
       apt: 
         name: nginx
         state: latest
-        update_cache: yes
-        install_recommends: yes
-
-    - name: install python
-      apt: 
-        name: python3
-        state: latest
-        force_apt_get: yes
         update_cache: yes
         install_recommends: yes
     
