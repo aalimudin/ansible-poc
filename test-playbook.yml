@@ -29,7 +29,7 @@
     - name: create authorized_keys file and add ssh key
       copy: 
         content: "{{ssh_pubkey}}"
-        dest: '/home/"{{new_user}}"/.ssh/authorized_keys'
+        dest: '/home/{{new_user}}/.ssh/authorized_keys'
     
     # - name: add ssh key to .ssh
     #   lineinfile:
