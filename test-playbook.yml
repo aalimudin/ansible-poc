@@ -21,14 +21,14 @@
     
     - name: create user account
       user:
-        name: "{{new-user}}"
+        name: "{{new_user}}"
         shell: /bin/bash
         groups: admin
         append: yes
     
     - name: add ssh key to .ssh
       lineinfile:
-        path: '/home/"{{new-user}}"/.ssh/authorized_keys'
+        path: '/home/"{{new_user}}"/.ssh/authorized_keys'
         line: "{{ssh_pubkey}}"
         mode: 0600
     
