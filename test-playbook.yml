@@ -25,6 +25,12 @@
         shell: /bin/bash
         groups: admin
         append: yes
+      
+    - name: create .ssh directory if it's not exist
+      file:
+        path: '/home/{{new_user}}/.ssh'
+        state: directory
+        mode: '0755'
     
     - name: create authorized_keys file and add ssh key
       copy: 
