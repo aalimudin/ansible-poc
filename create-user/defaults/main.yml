@@ -1,0 +1,7 @@
+---
+# defaults file for create-user
+#- name: testing to add ssh key and add user account
+ become: yes
+ vars: 
+   ssh_pubkey: "{{lookup('file', '/var/jenkins_home/aws-key/deploy.pub')}}"
+   new_user: test-ansible

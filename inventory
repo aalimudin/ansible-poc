@@ -1,2 +1,2 @@
 [test-ansible]
-18.140.24.250
+myaws ansible_host=18.140.24.250 ansible_user=ubuntu ansible_become_user=ubuntu

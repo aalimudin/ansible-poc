@@ -1,0 +1,6 @@
+---
+- name: Coverage
+  hosts: test-ansible
+  roles:
+    - role: create-user
+
