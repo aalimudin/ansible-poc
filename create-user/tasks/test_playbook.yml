@@ -25,6 +25,7 @@
     state: latest
 
 - name: create user account
+  become: yes
   user:
     name: "{{new_user}}"
     shell: /bin/bash
